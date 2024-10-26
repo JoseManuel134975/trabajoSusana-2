@@ -25,7 +25,6 @@ jobs:
       # Genera la documentación en HTML
       - name: Build the documentation
         run: |
-          cd build
           make html
 
       - name: Deploy to GitHub Pages  # Publica en GitHub Pages
