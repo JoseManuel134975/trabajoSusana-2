@@ -32,4 +32,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # Token para autenticación
-          publish_dir: ./docs/_build/html  # Directorio de publicación
+          publish_dir: ./python/build/html  # Directorio de publicación
