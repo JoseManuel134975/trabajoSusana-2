@@ -25,6 +25,7 @@ jobs:
       # Genera la documentación en HTML
       - name: Build the documentation
         run: |
+          git pull
           git checkout gh-pages
           make html
 
