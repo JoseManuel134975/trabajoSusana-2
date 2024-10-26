@@ -1,1 +1,35 @@
+name: Deploy Docs to GitHub Pages  # Nombre del flujo de trabajo
 
+on:
+  push:
+    branches:
+      - main  # Se ejecuta en cada push a la rama principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Usa la última versión de Ubuntu para ejecutar el trabajo
+    steps:
+      - name: Checkout the repository  # Paso para clonar el repositorio
+        uses: actions/checkout@v2
+
+      - name: Set up Python  # Paso para configurar el entorno de Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Versión de Python
+
+      - name: Install dependencies  # Instala las dependencias necesarias
+        run: |
+          pip install sphinx
+          pip install sphinx-autobuild
+
+      # Genera la documentación en HTML
+      - name: Build the documentation
+        run: |
+          cd docs
+          make html
+
+      - name: Deploy to GitHub Pages  # Publica en GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Token para autenticación
+          publish_dir: ./docs  # Directorio de publicación
