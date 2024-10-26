@@ -3,7 +3,7 @@ name: Deploy Docs to GitHub Pages  # Nombre del flujo de trabajo
 on:
   push:
     branches:
-      - main  # Se ejecuta en cada push a la rama principal
+      - main  # Se ejecuta en cada push a la rama principala
 
 jobs:
   build:
