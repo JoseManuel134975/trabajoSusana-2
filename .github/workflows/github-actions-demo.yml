@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest  # Usa la última versión de Ubuntu para ejecutar el trabajo
     steps:
-      - name: Checkout the repository  # Paso para clonar el repositorio
+      - name: Checkout the repository  # Paso para clonar el repositorioo
         uses: actions/checkout@v2
 
       - name: Set up Python  # Paso para configurar el entorno de Python
