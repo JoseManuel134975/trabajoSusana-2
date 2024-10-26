@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest  # Usa la última versión de Ubuntu para ejecutar el trabajo
     steps:
-      - name: Checkout the repository  # Paso para clonar el repositorioo
+      - name: Checkout the repository  # Paso para clonar el repositorio
         uses: actions/checkout@v2
 
       - name: Set up Python  # Paso para configurar el entorno de Python
@@ -27,6 +27,7 @@ jobs:
         run: |
           git pull
           git checkout gh-pages
+          cd docs
           make html
 
       - name: Deploy to GitHub Pages  # Publica en GitHub Pages
