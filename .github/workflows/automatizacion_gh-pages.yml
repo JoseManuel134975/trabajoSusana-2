@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest  # Usa la última versión de Ubuntu para ejecutar el trabajo
     steps:
       - name: Checkout the repository  # Paso para clonar el repositorio
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 # Permite a GitHub Action acceder todo el repositorio para realizar acciones
 
       - name: Set up Python  # Paso para configurar el entorno de Python
         uses: actions/setup-python@v2
@@ -22,14 +22,14 @@ jobs:
           pip install sphinx
           pip install sphinx-autobuild
 
-      # Genera la documentación en HTML
+      # Genera la documentación en HTML. ¡El dir puede ser /docs pero en mi caso me dio problemas!*
       - name: Build the documentation
         run: |
-          cd python
+          cd python 
           make html
 
       - name: Deploy to GitHub Pages  # Publica en GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3 # Publica en la rama gh-pages los archivos del publish_dir (más abajo)
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}  # Token para autenticación
-          publish_dir: ./python/build/html  # Directorio de publicación
+          publish_dir: ./python/build/html  # Directorio de publicación. Los archivos de documentación se recogen de este directorio
