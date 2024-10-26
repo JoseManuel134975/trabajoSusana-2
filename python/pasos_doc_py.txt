@@ -1,0 +1,36 @@
+
+LA DOCUMENTACIÓN SE HACE CON:
+    >> Si es un comentario suelto: # comentario
+    >> Si es documentación puedes hacerlo con triple comilla simple o doble:
+      '''
+      comentario
+      '''
+      //
+      """
+      comentario
+      """
+
+
+1. Lo más esencial: usar DOCSTRINGS
+    · Son cadenas de texto que se colocan justo después de la definición de una función, y se puede acceder a ellos
+      a través de la función help() o inspeccionando el elemento __doc__
+
+2. Seguir un formato (PEP 257, la guía oficial de DOCSTRINGS de python)
+    · Los DOCSTRINGS deben ser oraciones completas, se comienza con una descripción corta y si necesitases especificar
+      algo más, se deja una línea en blanco entre medias y usar el tiempo presente.
+
+3. Incluir las cosas importantes
+    · Descripción breve (una línea).
+    · Parámteros 'args, parameters' (parámetros de entrada, tipos y una breve descripción).
+    · Valor de retorno 'returns' (qué devuelve y el tipo).
+    · Excepciones 'raises' (qué excepciones podrían ser lanzadas por la función).
+    ··· Ejemplos (en casos de funciones más complejas).
+
+4. Comentarios en el código
+    · Poner de vez en cuando alguna línea suelta de código para explicar algo concreto nunca está de más.
+
+5. Clases y módulos
+    · TODO se documenta: si es una clase, decir qué representa y si es un módulo, de forma individual, como anteriormente dije
+
+6. Ser CLARO
+    · Imaginar siempre que quien va a leerlo no tiene NI IDEA del código, NO asumir NINGÚN conocimiento NUNCA.
