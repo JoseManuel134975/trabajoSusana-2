@@ -1,7 +1,7 @@
 
 class Calculadora:
     """
-    Clase Calculadora para realizar operaciones matemáticas básicas. Prueba para .yml :)))
+    Clase Calculadora para realizar operaciones matemáticas básicas. Prueba para .yml. DOÑA SUSANA!!!!!!:)))
     """
 
     def __init__(self):
